@@ -130,6 +130,8 @@ const Register = () => {
                 >
                     SignUp
                 </Button>
+            </form>
+
             <div style={{ textAlign: 'center', marginTop: '10px' }}>
                 <button onClick={googleLogin} style={{ marginRight: '10px', padding: '10px 20px', backgroundColor: '#DB4437', color: '#fff', border: 'none', borderRadius: '5px' }}>
                     Sign-up with Google
@@ -138,7 +140,6 @@ const Register = () => {
                     Sign-up with GitHub
                 </button>
             </div>
-            </form>
 
             {message && (
                 <Typography
