@@ -26,4 +26,23 @@ router.get(
     handleOAuthCallback
 );
 
+
+// Facebook Routes
+router.get('/facebook', passport.authenticate('facebook', { scope: ['email'] }));
+router.get(
+    '/facebook/callback',
+    passport.authenticate('facebook',{failureRedirect: '/login'}),
+    handleOAuthCallback
+);
+
+// LinkedIn Routes
+router.get('/linkedin', passport.authenticate('linkedin'));
+router.get(
+    '/linkedin/callback',
+    passport.authenticate('linkedin', {
+        successRedirect: '/doctor-selection', // Adjust redirect as needed
+        failureRedirect: '/login',
+    })
+);
+
 module.exports = router;
